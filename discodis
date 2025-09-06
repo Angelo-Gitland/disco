@@ -1,0 +1,22 @@
+-- 🏝️ Lua Land | Disco Party Script 🏝️
+
+local Lighting = game:GetService("Lighting")
+local RunService = game:GetService("RunService")
+
+local function randomDiscoColor()
+    return Color3.fromHSV(math.random(), 0.7 + math.random() * 0.3, 0.7 + math.random() * 0.3)
+end
+
+while true do
+    -- Change Ambient lighting (affects whole server)
+    Lighting.Ambient = randomDiscoColor()
+    Lighting.OutdoorAmbient = randomDiscoColor()
+    Lighting.FogColor = randomDiscoColor()
+    
+    -- Spam ColorShift to boost disco vibes
+    Lighting.ColorShift_Top = randomDiscoColor()
+    Lighting.ColorShift_Bottom = randomDiscoColor()
+
+    -- Wait a short time before next spam
+    task.wait(0.2) -- speed of disco (lower = faster flashing)
+end
